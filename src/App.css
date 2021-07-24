@@ -1,38 +1,276 @@
-.App {
-  text-align: center;
+:root {
+  --blue: #59e7fa;
+  --pink: #ff2aed;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#one {
+color: var(--pink);
+  animation-name: pinks;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
 }
+#two {
+  color: var(--blue);
+  animation-name: blues;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+ 
+}
+#three{
+  color: var(--pink);
+  animation-name: pinks;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+@keyframes blues {
+  from {
+   --blue: #ff16ff;
+  }
+  to {
+    --blue: #12e2fd;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes pinks {
+  from {
+  
+   
+    --pink: #12e2fd;
+  }
+  to {
+    --pink: #ff16ff;
+  }
+}
+
+@keyframes slidein {
+  from {
+  
+    width: 20%;
+    height: 20%;
+  }
+
+  to {
+      width: 50%;
+      height: 50%;
+  }
+}
+
+body {
+  background-color: black;
+}
+
+.mv-container {
+  height: 133px;
+  margin-right: 1px;
+  width: 132px;
+  position: relative;
+  display: block;
+  left: 0px;
+  right: 1px;
+  bottom: 1px;
+  top: 0px;
+  background-color: #000000;
+}
+.main-container {
+  z-index: -1;
+  margin-right: 1px;
+  height: 400px;
+  width: 399px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1px;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  background-color: azure;
+}
+
+.lobby {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content:center;
+  width:100vw;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+#text {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  width: -webkit-fill-available;
+  height: 65px;
+  font-family: sans-serif;
+  font-size: 60px;
+  opacity: 0.4;
+  color: #12e2fdda;
+  bottom:10px;
+  top:10px;
+  background-color: black;
+  border-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#text:focus{
+  color: #00daf7;
+  opacity: 1;
+  border-width: 0px;
+}
+
+.input-space {
+  display:flex;
+  text-align: center;
+  border-radius: 2px;
+  justify-content: space-between;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 150px;
+}
+
+#button {
+  display: flex;
+  position: relative;
+  background-color:fuchsia;
+  border-radius: 2px;
+  height:50px;
+  width: 110px;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2em;
+ }
+
+ #button:hover{
+  background-color:#12e2fd;
+  cursor: pointer;
+  color: fuchsia;
+ }
+ #button::after{
+   background-color: #069eb3;
+   width: fit-content;
+ }
+
+.wining-container {
+      z-index: 2;
+      height: 400px;
+      width: 400px;
+      position: fixed;
+      display: flow-root;
+      top: 30px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      visibility:hidden;
+      filter: blur(0);
+      -webkit-filter: blur(0);
+}
+p {
+      color: aqua;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+  
+
+h1 {
+  top: 5%;
+  position: absolute;
+  font-size: 5em;
+  font-family: cursive;
+}
+h2 {
+  color: rgb(185, 252, 29);
+  font-size: xx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+
+}
+.draw {
+
+  color: rgb(29, 126, 252);
+  font-size: xxx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  position: relative;
+  visibility: hidden;
+  top: 160px;
+  bottom: 0;
+  left: 120px;
+  right: 0;
+  margin: auto;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+.playerO {
+  border-color: rgb(18, 226, 253);
+  border-width: 21px;
+  border-style: solid;
+  border-radius: 50%;
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  left: 6px;
+  top: 9px;
+  display: block;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+  
+
+}
+.player1 {
+  border-color: rgb(255, 26, 244);
+  border-width: 21px;
+  border-style: solid;
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+
+.pl1-win {
+  border-color: rgb(255, 26, 244);
+  border-width: 21px;
+  border-style: solid;
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  animation-duration: 0.4s;
+  animation-name: slidein;
+  
+}
+.plO-win {
+  border-color: rgb(18, 226, 253);
+  border-width: 21px;
+  border-style: solid;
+  border-radius: 50%;
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  animation-duration: 0.4s;
+  animation-name: slidein;
 }

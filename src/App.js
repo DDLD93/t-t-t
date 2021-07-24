@@ -1,23 +1,31 @@
 import logo from './logo.svg';
+import GamePlay from './GamePlay'
+import Lobby from './Lobby'
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
+const [user, setuser] = useState(null)
+const [loading, setloading] = useState(false)
+
+function clicked(e) {
+  setuser(e.target.previousElementSibling.innerText)
+  e.target.previousElementSibling.disabled = true;
+  e.target.previousElementSibling.style.opacity = '1';
+  e.target.innerText = 'STARTING';
+  e.target.style.width = 'fit-content';
+  setloading(true)
+  console.log(user)
+}
+
+useEffect(() => {
+ 
+}, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <GamePlay/>
+{// <Lobby userAlias={clicked} />
+}
     </div>
   );
 }
